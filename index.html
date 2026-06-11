@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -159,7 +159,7 @@ h1{
 <div id="cart-items"></div>
 
 <div class="total">
-Total : <span id="total">0</span> €
+Total : <span id="total">0</span> â‚¬
 </div>
 
 <button class="buy-btn" onclick="checkout()">
@@ -173,7 +173,7 @@ Commander
 <h1>Cassandre Vendeoux</h1>
 
 <p class="slogan">
-Peindre des paysages où le regard trouve le repos.
+Peindre des paysages oÃ¹ le regard trouve le repos.
 </p>
 
 </header>
@@ -181,10 +181,10 @@ Peindre des paysages où le regard trouve le repos.
 <section class="intro">
 
 <p>
-À travers la lumière, les horizons et les espaces silencieux,
-mes peintures invitent à la contemplation et à l'apaisement.
-Chaque œuvre est une recherche d'équilibre entre présence,
-souvenir et paysage intérieur.
+Ã€ travers la lumiÃ¨re, les horizons et les espaces silencieux,
+mes peintures invitent Ã  la contemplation et Ã  l'apaisement.
+Chaque Å“uvre est une recherche d'Ã©quilibre entre prÃ©sence,
+souvenir et paysage intÃ©rieur.
 </p>
 
 </section>
@@ -200,11 +200,11 @@ souvenir et paysage intérieur.
 <h2>Sous l'ombre douce du ciel</h2>
 
 <p class="dimensions">
-Huile sur toile · 40 × 40 cm
+Huile sur toile Â· 40 Ã— 40 cm
 </p>
 
 <p class="price">
-250 €
+250 â‚¬
 </p>
 
 <button class="buy-btn"
@@ -225,11 +225,11 @@ Ajouter au panier
 <h2>Contemplation</h2>
 
 <p class="dimensions">
-Huile sur toile · 30 × 60 cm
+Huile sur toile Â· 30 Ã— 60 cm
 </p>
 
 <p class="price">
-300 €
+300 â‚¬
 </p>
 
 <button class="buy-btn"
@@ -244,22 +244,22 @@ Ajouter au panier
 <section class="artwork">
 
 <img src="images/un-cafe-un-lac-un-instant.jpeg"
-alt="Un café, un lac, un instant">
+alt="Un cafÃ©, un lac, un instant">
 
 <div class="artwork-info">
 
-<h2>Un café, un lac, un instant</h2>
+<h2>Un cafÃ©, un lac, un instant</h2>
 
 <p class="dimensions">
-Huile sur toile · 50 × 70 cm
+Huile sur toile Â· 50 Ã— 70 cm
 </p>
 
 <p class="price">
-650 €
+650 â‚¬
 </p>
 
 <button class="buy-btn"
-onclick="add('Un café, un lac, un instant',650)">
+onclick="add('Un cafÃ©, un lac, un instant',650)">
 Ajouter au panier
 </button>
 
@@ -271,7 +271,7 @@ Ajouter au panier
 
 <footer>
 
-© Cassandre Vendeoux
+Â© Cassandre Vendeoux
 
 </footer>
 
@@ -302,7 +302,7 @@ total += item.price;
 html += `
 <div class="cart-item">
 ${item.name}<br>
-${item.price} €
+${item.price} â‚¬
 </div>
 `;
 
@@ -316,7 +316,7 @@ document.getElementById("total").innerText = total;
 function checkout(){
 
 alert(
-"Le paiement Stripe sera ajouté dans la prochaine étape."
+"Le paiement Stripe sera ajoutÃ© dans la prochaine Ã©tape."
 );
 
 }
