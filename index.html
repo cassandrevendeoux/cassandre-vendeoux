@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cassandre Vendeoux</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Georgia, serif;
+    background:#f7f4ef;
+    color:#2f2f2f;
+}
+
+header{
+    text-align:center;
+    padding:80px 20px 40px;
+}
+
+h1{
+    font-weight:300;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.slogan{
+    font-style:italic;
+    color:#666;
+}
+
+.gallery{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding:40px 20px;
+}
+
+.card{
+    background:white;
+    padding:15px;
+}
+
+.card h3{
+    margin:10px 0 5px;
+}
+
+.price{
+    font-weight:bold;
+    margin:5px 0 10px;
+}
+
+button{
+    background:#7a8a8a;
+    color:white;
+    border:none;
+    padding:10px;
+    width:100%;
+    cursor:pointer;
+}
+
+.cart{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:white;
+    padding:15px;
+    width:260px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Cassandre Vendeoux</h1>
+<div class="slogan">Peindre des paysages où le regard trouve le repos.</div>
+</header>
+
+<div class="cart">
+<h3>Panier</h3>
+<div id="items"></div>
+<p>Total : <span id="total">0</span> €</p>
+<button onclick="checkout()">Commander</button>
+</div>
+
+<div class="gallery">
+
+<div class="card">
+<h3>À Montpellier</h3>
+<p>50 × 70 cm</p>
+<p class="price">700 €</p>
+<button onclick="add('À Montpellier',700)">Ajouter</button>
+</div>
+
+<div class="card">
+<h3>Témoin de la vie</h3>
+<p>50 × 70 cm</p>
+<p class="price">700 €</p>
+<button onclick="add('Témoin de la vie',700)">Ajouter</button>
+</div>
+
+<div class="card">
+<h3>Cheval de Camargue</h3>
+<p>70 × 50 cm</p>
+<p class="price">650 €</p>
+<button onclick="add('Cheval de Camargue',650)">Ajouter</button>
+</div>
+
+<div class="card">
+<h3>Un tout</h3>
+<p>96 × 73 cm</p>
+<p class="price">1100 €</p>
+<button onclick="add('Un tout',1100)">Ajouter</button>
+</div>
+
+<div class="card">
+<h3>Doux réveil à la maison familiale</h3>
+<p>40 × 30 cm</p>
+<p class="price">180 €</p>
+<button onclick="add('Doux réveil',180)">Ajouter</button>
+</div>
+
+<div class="card">
+<h3>Le pont d’Ébreuil</h3>
+<p>40 × 30 cm</p>
+<p class="price">120 €</p>
+<button onclick="add('Pont d’Ébreuil',120)">Ajouter</button>
+</div>
+
+<div class="card">
+<h3>Lumière du matin aux écuries</h3>
+<p>50 × 40 cm</p>
+<p class="price">330 €</p>
+<button onclick="add('Lumière du matin',330)">Ajouter</button>
+</div>
+
+</div>
+
+<script>
+
+let cart = [];
+
+function add(name, price){
+    cart.push({name,price});
+    render();
+}
+
+function render(){
+    let items = document.getElementById("items");
+    let total = 0;
+    items.innerHTML = "";
+
+    cart.forEach(i=>{
+        total += i.price;
+        items.innerHTML += `<div>${i.name} - ${i.price} €</div>`;
+    });
+
+    document.getElementById("total").innerText = total;
+}
+
+function checkout(){
+    alert("Paiement Stripe à connecter ensuite");
+}
+
+</script>
+
+</body>
+</html>
