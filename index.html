@@ -2,513 +2,1085 @@
 <html lang="fr">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cassandre Vendeoux</title>
+    <title>Cassandre Vendeoux — Peintures</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet"> <style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    >
 
-body{
-    margin:0;
-    background:#f8f6f2;
-    color:#2f2f2f;
-    font-family:'Cormorant Garamond', serif;
-}
+    <style>
 
-header{
-    text-align:center;
-    padding:120px 20px 60px;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-h1{
-    font-size:4rem;
-    font-weight:300;
-    letter-spacing:2px;
-    margin:0;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.slogan{
-    font-size:1.3rem;
-    color:#666;
-    font-style:italic;
-    margin-top:10px;
-}
+        body {
+            margin: 0;
+            background: #f8f6f2;
+            color: #2f2f2f;
+            font-family: 'Cormorant Garamond', serif;
+        }
 
-.intro{
-    max-width:800px;
-    margin:0 auto 120px;
-    text-align:center;
-    font-size:1.3rem;
-    line-height:1.8;
-    padding:0 20px;
-}
 
-.gallery{
-    max-width:1200px;
-    margin:auto;
-    padding:0 20px 120px;
+        /* =========================
+           ACCUEIL
+        ========================= */
 
-    display:grid;
-    grid-template-columns:repeat(3,1fr);;
-    gap:90px 50px;
-}
+        .home {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 70px 30px 80px;
+        }
 
-.artwork img{
-    width:100%;
-    max-width:380px;
-    display:block;
-    margin:0 auto 25px;
+        .site-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
 
-    border:1px solid #e6dfd6;
-    padding:6px;
-    background:#fcfbf8;
+        .site-title h1 {
+            font-size: 4.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin: 0;
+        }
 
-    box-shadow:0 8px 25px rgba(0,0,0,0.04);
+        .slogan {
+            font-size: 1.35rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 12px;
+        }
 
-    transition:transform .35s ease, box-shadow .35s ease;
-    cursor:zoom-in;
-}
 
-.artwork img:hover{
-    transform:scale(1.12);
-    box-shadow:0 18px 40px rgba(0,0,0,.18);
-    position:relative;
-    z-index:10;
-}
+        /* =========================
+           ŒUVRE DU MOMENT
+        ========================= */
 
-.artwork h2{
-    font-size:2rem;
-    font-weight:400;
-    margin:10px 0;
-}
+        .featured {
+            max-width: 1150px;
+            width: 100%;
+            margin: 0 auto;
 
-.dimensions{
-    color:#777;
-}
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            align-items: center;
+            gap: 90px;
+        }
 
-footer{
-    text-align:center;
-    padding:80px 20px;
-    color:#777;
-}
+        .featured-image {
+            text-align: center;
+        }
 
-@media (max-width:768px){
+        .featured-image img {
+            width: 100%;
+            max-width: 650px;
+            display: block;
+            margin: auto;
 
-    h1{
-        font-size:2.8rem;
-    }
+            border: 1px solid #e6dfd6;
+            padding: 8px;
+            background: #fcfbf8;
 
-    .gallery{
-        grid-template-columns:1fr;
-        gap:80px;
-    }
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
 
-    .intro{
-        font-size:1.15rem;
-    }
-}
+            transition: transform 0.5s ease,
+                        box-shadow 0.5s ease;
+        }
 
-  .lightbox{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.9);
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-    cursor:zoom-out;
-}
+        .featured-image img:hover {
+            transform: scale(1.015);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.14);
+        }
 
-.lightbox img{
-    max-width:90vw;
-    max-height:90vh;
-    border:8px solid #fff;
-    box-shadow:0 20px 60px rgba(0,0,0,.5);
-}
-.artwork{position:relative;text-align:center;overflow:hidden;}.sold{
-    position:absolute;
-    top:12px;
-    right:12px;
+        .featured-text {
+            padding-right: 20px;
+        }
 
-    background:rgba(139,47,47,0.95);
-    color:white;
+        .featured-label {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            color: #8b6b4b;
+            margin-bottom: 20px;
+        }
 
-    padding:6px 10px;
-    font-size:0.75rem;
-    font-weight:600;
-    letter-spacing:1px;
+        .featured-text h2 {
+            font-size: 3.4rem;
+            font-weight: 400;
+            margin: 0 0 5px;
+        }
 
-    border-radius:2px;
-    z-index:999;
-}.lightbox img{
-    max-width:90vw;
-    max-height:90vh;
-    border:8px solid #fff;
-    box-shadow:0 20px 60px rgba(0,0,0,.5);
-}
+        .location {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #8b6b4b;
+            margin: 0 0 30px;
+        }
 
-.instagram{
-    margin-top:35px;
-    font-size:1.15rem;
-}
+        .featured-text p.description {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #555;
+        }
 
-.instagram a{
-    color:#2f2f2f;
-    text-decoration:none;
-    border-bottom:1px solid #b9b1a5;
-    transition:.3s;
-}
+        .featured-details {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd6cd;
+            color: #777;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
 
-.instagram a:hover{
-    color:#8b6b4b;
-    border-bottom-color:#8b6b4b;
-}
+        .discover {
+            display: inline-block;
+            margin-top: 30px;
 
-.filters{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:18px;
-    margin:0 auto 80px;
-    padding:0 20px;
-}
+            color: #5a5148;
+            text-decoration: none;
 
-.filters button{
-    background:transparent;
-    border:none;
-    border-bottom:1px solid #d8d1c8;
-    padding:8px 6px;
-    font-family:'Cormorant Garamond', serif;
-    font-size:1.35rem;
-    color:#5a5148;
-    cursor:pointer;
-    transition:all .3s ease;
-}
+            border-bottom: 1px solid #b9b1a5;
+            padding-bottom: 6px;
 
-.filters button:hover{
-    color:#8b6b4b;
-    border-bottom-color:#8b6b4b;
-}
+            font-size: 1.15rem;
 
-.filters button.active{
-    color:#8b6b4b;
-    border-bottom:2px solid #8b6b4b;
-}</style></style>
+            transition: 0.3s;
+        }
+
+        .discover:hover {
+            color: #8b6b4b;
+            border-bottom-color: #8b6b4b;
+        }
+
+
+        /* =========================
+           PRÉSENTATION
+        ========================= */
+
+        .intro {
+            max-width: 800px;
+            margin: 100px auto 120px;
+
+            text-align: center;
+            font-size: 1.3rem;
+            line-height: 1.8;
+
+            padding: 0 20px;
+        }
+
+        .instagram {
+            margin-top: 35px;
+            font-size: 1.15rem;
+        }
+
+        .instagram a {
+            color: #2f2f2f;
+            text-decoration: none;
+
+            border-bottom: 1px solid #b9b1a5;
+
+            transition: 0.3s;
+        }
+
+        .instagram a:hover {
+            color: #8b6b4b;
+            border-bottom-color: #8b6b4b;
+        }
+
+
+        /* =========================
+           GALERIE
+        ========================= */
+
+        #galerie {
+            scroll-margin-top: 30px;
+        }
+
+        .gallery-section {
+            padding-top: 80px;
+        }
+
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .gallery-title h2 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin: 0 0 10px;
+        }
+
+        .gallery-title p {
+            color: #777;
+            font-size: 1.15rem;
+            margin: 0;
+        }
+
+
+        /* =========================
+           FILTRES
+        ========================= */
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        .filters button {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #d8d1c8;
+
+            padding: 8px 6px;
+
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            color: #5a5148;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+        }
+
+        .filters button:hover {
+            color: #8b6b4b;
+            border-bottom-color: #8b6b4b;
+        }
+
+        .filters button.active {
+            color: #8b6b4b;
+            border-bottom: 2px solid #8b6b4b;
+        }
+
+
+        /* =========================
+           GRILLE
+        ========================= */
+
+        .gallery {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px 120px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 90px 50px;
+        }
+
+        .artwork {
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .artwork img {
+            width: 100%;
+            max-width: 380px;
+            display: block;
+            margin: 0 auto 25px;
+
+            border: 1px solid #e6dfd6;
+            padding: 6px;
+            background: #fcfbf8;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+
+            cursor: zoom-in;
+        }
+
+        .artwork img:hover {
+            transform: scale(1.12);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+
+            position: relative;
+            z-index: 10;
+        }
+
+        .artwork h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin: 10px 0;
+        }
+
+        .dimensions {
+            color: #777;
+        }
+
+
+        /* =========================
+           INDISPONIBLE
+        ========================= */
+
+        .sold {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+
+            background: rgba(139, 47, 47, 0.95);
+            color: white;
+
+            padding: 6px 10px;
+
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+
+            border-radius: 2px;
+
+            z-index: 999;
+        }
+
+
+        /* =========================
+           LIGHTBOX
+        ========================= */
+
+        .lightbox {
+            display: none;
+
+            position: fixed;
+            inset: 0;
+
+            background: rgba(0, 0, 0, 0.9);
+
+            justify-content: center;
+            align-items: center;
+
+            z-index: 9999;
+
+            cursor: zoom-out;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+
+            border: 8px solid white;
+
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            padding: 80px 20px;
+            color: #777;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .home {
+                padding: 60px 20px 70px;
+            }
+
+            .site-title {
+                margin-bottom: 50px;
+            }
+
+            .site-title h1 {
+                font-size: 2.8rem;
+                letter-spacing: 2px;
+            }
+
+            .slogan {
+                font-size: 1.15rem;
+            }
+
+            .featured {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .featured-text {
+                padding: 0;
+                text-align: center;
+            }
+
+            .featured-text h2 {
+                font-size: 2.7rem;
+            }
+
+            .featured-text p.description {
+                font-size: 1.15rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 80px;
+            }
+
+            .gallery-title h2 {
+                font-size: 2.5rem;
+            }
+
+            .intro {
+                font-size: 1.15rem;
+                margin-top: 80px;
+            }
+
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-<header>
-<h1>Cassandre Vendeoux</h1>
-<p class="slogan">Peindre des paysages où le regard trouve le repos.</p>
-</header><section class="intro">
-À travers la lumière, les horizons et les espaces silencieux,
-mes peintures invitent à la contemplation et à l’apaisement.
-Chaque œuvre est une recherche d’équilibre entre présence et paysage intérieur.
 
-<p class="instagram">
-📷 Instagram :
-<a href="https://instagram.com/cassvpeintre" target="_blank">@cassvpeintre</a>
-</p>
-</section><div class="filters">
-    <button data-filter="paysage">Paysages</button>
-    <button data-filter="urbain">Urbain</button>
-    <button data-filter="voyage">Voyages</button>
-    <button data-filter="chevaux">Chevaux</button>
-    <button data-filter="vie">Instants de vie</button>
-<button class="active" data-filter="all">Toutes les œuvres</button>
-</div>
+    <!-- =========================
+         PAGE D'ACCUEIL
+    ========================= -->
 
-<div class="gallery">
+    <main class="home">
 
-    <div class="artwork" data-category="paysage">
-        <img src="sous-lombre-douce-du-ciel.jpeg" alt="Sous l'ombre douce du ciel">
-        <h2>Sous l'ombre douce du ciel</h2>
-        <p class="dimensions"> Huile sur toile - 40 × 40 cm</p>
+        <div class="site-title">
+
+            <h1>
+                Cassandre Vendeoux
+            </h1>
+
+            <p class="slogan">
+                Peindre des paysages où le regard trouve le repos.
+            </p>
+
+        </div>
+
+
+        <!-- ŒUVRE DU MOMENT -->
+
+        <section class="featured">
+
+            <div class="featured-image">
+
+                <img
+                    src="Balade-nocturne.jpeg"
+                    alt="Balade nocturne — paysage de Florence"
+                >
+
+            </div>
+
+
+            <div class="featured-text">
+
+                <p class="featured-label">
+                    Œuvre du moment
+                </p>
+
+                <h2>
+                    Balade nocturne
+                </h2>
+
+                <p class="location">
+                    Florence, au crépuscule
+                </p>
+
+                <p class="description">
+                    <em>Balade nocturne</em> nous emmène à Florence lorsque la ville s'abandonne
+                    doucement à la nuit.
+                </p>
+
+                <p class="description">
+                    Les lumières de la ville se reflètent sur les façades
+                    et les rues prennent une atmosphère presque silencieuse.
+                    Une invitation à ralentir, à regarder et à retrouver,
+                    dans la lumière de Florence, la sensation d'un instant
+                    suspendu entre jour et nuit.
+                </p>
+
+                <p class="featured-details">
+                    Huile sur toile<br>
+                    73 × 100 cm
+                </p>
+
+                <a href="#galerie" class="discover">
+                    Découvrir les œuvres →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         PRÉSENTATION
+    ========================= -->
+
+    <section class="intro">
+
+        <p>
+            À travers la lumière, les horizons et les espaces silencieux,
+            mes peintures invitent à la contemplation et à l’apaisement.
+            Chaque œuvre est une recherche d’équilibre entre présence
+            et paysage intérieur.
+        </p>
+
+        <p class="instagram">
+
+            📷 Instagram :
+
+            <a
+                href="https://instagram.com/cassvpeintre"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                @cassvpeintre
+            </a>
+
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         GALERIE
+    ========================= -->
+
+    <section class="gallery-section" id="galerie">
+
+        <div class="gallery-title">
+
+            <h2>
+                Les œuvres
+            </h2>
+
+            <p>
+                Peintures à l'huile et à l'acrylique
+            </p>
+
+        </div>
+
+
+        <!-- FILTRES -->
+
+        <div class="filters">
+
+            <button data-filter="paysage">
+                Paysages
+            </button>
+
+            <button data-filter="urbain">
+                Urbain
+            </button>
+
+            <button data-filter="voyage">
+                Voyages
+            </button>
+
+            <button data-filter="chevaux">
+                Chevaux
+            </button>
+
+            <button data-filter="vie">
+                Instants de vie
+            </button>
+
+            <button class="active" data-filter="all">
+                Toutes les œuvres
+            </button>
+
+        </div>
+
+
+        <!-- GALERIE -->
+
+        <div class="gallery">
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="sous-lombre-douce-du-ciel.jpeg" alt="Sous l'ombre douce du ciel">
+                <h2>Sous l'ombre douce du ciel</h2>
+                <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="champs-sud.jpeg" alt="Le soleil du Midi sur les champs">
+                <h2>Le soleil du Midi sur les champs</h2>
+                <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="a-lauterbrunnen.jpeg" alt="Escapade">
+                <h2>Escapade</h2>
+                <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="chevaux">
+                <img src="lumiere-du-matin.jpeg" alt="Lumière du matin aux écuries">
+                <h2>Lumière du matin aux écuries</h2>
+                <p class="dimensions">Huile sur toile - 30 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="un-tout.jpeg" alt="Un tout">
+                <h2>Un tout</h2>
+                <p class="dimensions">Huile sur toile - 73 × 96 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="chevaux">
+                <img src="midi.jpeg" alt="Le grain du matin">
+                <h2>Le grain du matin</h2>
+                <p class="dimensions">Huile sur toile - 40 × 50 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="urbain">
+                <img src="temoin-de-vie.jpeg" alt="Témoin de vie">
+                <h2>Témoin de vie</h2>
+                <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="urbain">
+                <img src="passage.jpeg" alt="Passage">
+                <h2>Passage</h2>
+                <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="urbain">
+                <img src="a-montpellier.jpeg" alt="Calme et Cathédrale">
+                <h2>Calme et Cathédrale</h2>
+                <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="un-cafe-un-lac-un-instant.jpeg" alt="Moment près du lac">
+                <h2>Moment près du lac</h2>
+                <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="chevaux">
+                <img src="cheval-de-camargue.jpeg" alt="Cheval de Camargue">
+                <h2>Cheval de Camargue</h2>
+                <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="vie">
+                <div class="sold">INDISPONIBLE</div>
+                <img src="contemplation.jpeg" alt="Contemplation">
+                <h2>Contemplation</h2>
+                <p class="dimensions">Huile sur toile - 40 × 50 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="au-dela-de-la-barriere.jpeg" alt="Lumière sur nature">
+                <h2>Lumière sur nature</h2>
+                <p class="dimensions">Acrylique sur toile - 50 × 70 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="voyage">
+                <img src="soir-dautomne-au-hanok.jpeg" alt="Soir d'automne au Hanok">
+                <h2>Soir d'automne au Hanok</h2>
+                <p class="dimensions">Huile sur toile - 40 × 50 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="voyage">
+                <img src="entre-deux-temps.jpeg" alt="Entre deux temps">
+                <h2>Entre deux temps</h2>
+                <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="voyage">
+                <img src="paisible-hanok.jpeg" alt="Paisible Hanok">
+                <h2>Paisible Hanok</h2>
+                <p class="dimensions">Huile sur toile - 30 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="le-pont-debreuil.jpeg" alt="Le pont d'ébreuil">
+                <h2>Le pont d'ébreuil</h2>
+                <p class="dimensions">Huile sur toile - 30 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="hauteurs-au-repos-du-soleil.jpeg" alt="Hauteurs au repos du Soleil">
+                <h2>Hauteurs au repos du Soleil</h2>
+                <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="vie">
+                <div class="sold">INDISPONIBLE</div>
+                <img src="reveil-a-la-maison-familiale.jpeg" alt="Réveil à la maison familiale">
+                <h2>Réveil à la maison familiale</h2>
+                <p class="dimensions">Huile sur toile - 30 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="vie">
+                <img src="le-temps-dune-rencontre.jpeg" alt="Le temps d'une rencontre">
+                <h2>Le temps d'une rencontre</h2>
+                <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="voyage">
+                <img src="lappel-du-lointain.jpeg" alt="L'appel du lointain">
+                <h2>L'appel du lointain</h2>
+                <p class="dimensions">Acrylique sur toile - 40 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="voyage">
+                <img src="la-ville-qui-respire-en-couleur.jpeg" alt="Couleurs de Corée">
+                <h2>Couleurs de Corée</h2>
+                <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="vie">
+                <img src="en-famille.jpeg" alt="En famille">
+                <h2>En famille</h2>
+                <p class="dimensions">Huile sur toile - 40 × 50 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="vie">
+                <img src="les-amoureux-de-maguelone.jpeg" alt="Les amoureux de Maguelone">
+                <h2>Les amoureux de Maguelone</h2>
+                <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="vie">
+                <img src="les-amoureux-de-gangneung.jpeg" alt="Les amoureux de Gangneung">
+                <h2>Les amoureux de Gangneung</h2>
+                <p class="dimensions">Huile sur toile - 60 × 60 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="urbain">
+                <img src="patience.jpeg" alt="Patience">
+                <h2>Patience</h2>
+                <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="urbain">
+                <img src="un-jour-a-paris.jpeg" alt="Un jour à Paris">
+                <h2>Un jour à Paris</h2>
+                <p class="dimensions">Huile sur toile - 40 × 50 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="chevaux">
+                <img src="midi-les-juments-au-pré.jpeg" alt="Midi : les juments au pré">
+                <h2>Midi : les juments au pré</h2>
+                <p class="dimensions">Huile sur toile - 40 × 50 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="Balade-au-bord-du-lac.jpeg" alt="Balade au bord du lac">
+                <h2>Balade au bord du lac</h2>
+                <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="Balade-nocturne.jpeg" alt="Balade nocturne — Florence">
+                <h2>Balade nocturne</h2>
+                <p class="dimensions">Huile sur toile - 73 × 100 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="invitation-au-repos.jpeg" alt="Invitation au repos">
+                <h2>Invitation au repos</h2>
+                <p class="dimensions">Huile sur toile - 45 × 53 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="urbain">
+                <img src="calme-dans-la-ville.jpeg" alt="Calme dans la ville">
+                <h2>Calme dans la ville</h2>
+                <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="Les-montagnes-caressent-le-ciel.jpeg" alt="Les montagnes caressent le ciel">
+                <h2>Les montagnes caressent le ciel</h2>
+                <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="la-mer.jpeg" alt="La mer">
+                <h2>La mer</h2>
+                <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="le-repos-des-vignes.jpeg" alt="Le repos des vignes">
+                <h2>Le repos des vignes</h2>
+                <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="le-calme-aux-étangs.jpeg" alt="Le calme aux étangs">
+                <h2>Le calme aux étangs</h2>
+                <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="vie">
+                <img src="partage.jpeg" alt="Partage">
+                <h2>Partage</h2>
+                <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="douce-lumiere-sur-le-village.jpeg" alt="Douce lumière sur le village">
+                <h2>Douce lumière sur le village</h2>
+                <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="ouverture.jpeg" alt="Ouverture">
+                <h2>Ouverture</h2>
+                <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="vie">
+                <div class="sold">INDISPONIBLE</div>
+                <img src="havre-de-paix.jpeg" alt="Havre de paix">
+                <h2>Havre de paix</h2>
+                <p class="dimensions">Huile sur toile - 30 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <div class="sold">INDISPONIBLE</div>
+                <img src="les-nouvelles-couleurs-de-l-été.jpeg" alt="Les nouvelles couleurs de l'été">
+                <h2>Les nouvelles couleurs de l'été</h2>
+                <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="la-prairie-au-souffle-des-nuages.jpeg" alt="La prairie au souffle des nuages">
+                <h2>La prairie au souffle des nuages</h2>
+                <p class="dimensions">Huile sur toile - 40 × 50 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="vie">
+                <img src="Douceur-sur-les-hauteurs.jpeg" alt="Douceur sur les hauteurs">
+                <h2>Douceur sur les hauteurs</h2>
+                <p class="dimensions">Huile sur toile - 89 × 116 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="voyage">
+                <img src="le-chemin.jpeg" alt="Le chemin">
+                <h2>Le chemin</h2>
+                <p class="dimensions">Huile sur toile - 89 × 116 cm</p>
+            </div>
+
+
+            <div class="artwork" data-category="paysage">
+                <img src="fin-de-journée.jpeg" alt="Fin de journée">
+                <h2>Fin de journée</h2>
+                <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+        © Cassandre Vendeoux
+    </footer>
+
+
+    <!-- =========================
+         LIGHTBOX
+    ========================= -->
+
+    <div class="lightbox" id="lightbox">
+
+        <img
+            id="lightbox-img"
+            src=""
+            alt=""
+        >
+
     </div>
 
-    <div class="artwork" data-category="paysage">
-   <img src="champs-sud.jpeg" alt="Le soleil du Midi sur les champs">
-        <h2>Le soleil du Midi sur les champs</h2>
-        <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
-    </div>
 
-    <div class="artwork" data-category="paysage">
-        <img src="a-lauterbrunnen.jpeg" alt="Escapade">
-        <h2>Escapade</h2>
-        <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
-    </div>
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
-    <div class="artwork" data-category="chevaux">
-      <img src="lumiere-du-matin.jpeg" alt="Lumière du matin aux écuries">
-        <h2>Lumière du matin aux écuries</h2>
-        <p class="dimensions">Huile sur toile - 30 × 40 cm</p>
-    </div>
+    <script>
 
-    <div class="artwork" data-category="paysage">
-       <img src="un-tout.jpeg" alt="Un tout">
-        <h2>Un tout</h2>
-        <p class="dimensions">Huile sur toile - 73 × 96 cm</p>
-    </div>
+        /* =========================
+           LIGHTBOX
+        ========================= */
 
-    <div class="artwork" data-category="chevaux">
-  <img src="midi.jpeg" alt="Le grain du matin">
-        <h2>Le grain du matin</h2>
-        <p class="dimensions">Huile sur toile - 40 × 50 cm</p>
-    </div>
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
 
-    <div class="artwork" data-category="urbain">
-     <img src="temoin-de-vie.jpeg" alt="Témoin de vie">
-        <h2>Témoin de vie</h2>
-        <p class="dimensions" data-category="urbain">Huile sur toile - 50 × 70 cm</p>
-    </div>
+        document.querySelectorAll(".artwork img").forEach(img => {
 
-  <div class="artwork" data-category="urbain">
-  <img src="passage.jpeg" alt="Passage">
-        <h2>Passage</h2>
-        <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
-    </div>
+            img.addEventListener("click", () => {
 
-  <div class="artwork" data-category="urbain">
-  <img src="a-montpellier.jpeg" alt="Calme et Cathédrale">
-        <h2>Calme et Cathédrale</h2>
-        <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
-    </div>
+                lightbox.style.display = "flex";
 
-    <div class="artwork" data-category="paysage">
-   <img src="un-cafe-un-lac-un-instant.jpeg" alt="Moment près du lac">
-        <h2>Moment près du lac</h2>
-        <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
-    </div>  <div class="artwork" data-category="chevaux">
-  <img src="cheval-de-camargue.jpeg" alt="Cheval de Camargue">
-        <h2>Cheval de Camargue</h2>
-        <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
-    </div>
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
 
-    <div class="artwork" data-category="vie">
- <div class="sold">INDISPONIBLE</div>
-  <img src="contemplation.jpeg" alt="Contemplation">
-        <h2>Contemplation</h2>
-        <p class="dimensions">Huile sur toile - 40 × 50 cm</p>
-    </div>   <div class="artwork" data-category="paysage">
- <img src="au-dela-de-la-barriere.jpeg" alt="Lumière sur nature">
-        <h2>Lumière sur nature</h2>
-        <p class="dimensions">Acrylique sur toile - 50 × 70 cm</p>
-    </div>
+            });
 
-    <div class="artwork" data-category="voyage">
-  <img src="soir-dautomne-au-hanok.jpeg" alt="Soir d'automne au Hanok">
-        <h2>Soir d'automne au Hanok</h2>
-        <p class="dimensions">Huile sur toile - 40 × 50 cm</p>
-    </div>
-
-    <div class="artwork" data-category="voyage">
- <img src="entre-deux-temps.jpeg" alt="Entre deux temps">
-        <h2>Entre deux temps</h2>
-        <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
-    </div>
-
-    <div class="artwork" data-category="voyage">
-  <img src="paisible-hanok.jpeg" alt="Paisible Hanok">
-        <h2>Paisible Hanok</h2>
-        <p class="dimensions">Huile sur toile - 30 × 40 cm</p>
-    </div>
-
-     <div class="artwork" data-category="paysage">
-<img src="le-pont-debreuil.jpeg" alt="Le pont d'ébreuil">
-        <h2>Le pont d'ébreuil</h2>
-        <p class="dimensions">Huile sur toile - 30 × 40 cm</p>
-    </div>    <div class="artwork" data-category="paysage">
-<img src="hauteurs-au-repos-du-soleil.jpeg" alt="Hauteurs au repos du Soleil">
-        <h2>Hauteurs au repos du Soleil</h2>
-        <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
-    </div>   <div class="artwork" data-category="vie">
-    <div class="sold">INDISPONIBLE</div>
-    <img src="reveil-a-la-maison-familiale.jpeg" alt="Réveil à la maison familiale">
-    <h2>Réveil à la maison familiale</h2>
-    <p class="dimensions">Huile sur toile - 30 × 40 cm</p>
-</div>   <div class="artwork" data-category="vie">
-<img src="le-temps-dune-rencontre.jpeg" alt="Le temps d'une rencontre">
-        <h2>Le temps d'une rencontre</h2>
-        <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
-    </div>    <div class="artwork" data-category="voyage">
-<img src="lappel-du-lointain.jpeg" alt="L'appel du lointain">
-        <h2>L'appel du lointain</h2>
-        <p class="dimensions">Acrylique sur toile - 40 × 40 cm</p>
-    </div>    <div class="artwork" data-category="voyage">
-<img src="la-ville-qui-respire-en-couleur.jpeg" alt="Couleurs de Corée">
-        <h2>Couleurs de Corée</h2>
-        <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
-    </div>  <div class="artwork" data-category="vie">
-<img src="en-famille.jpeg" alt="En famille">
-        <h2>En famille</h2>
-        <p class="dimensions">Huile sur toile - 40 × 50 cm</p>
-    </div>  <div class="artwork" data-category="vie">
-<img src="les-amoureux-de-maguelone.jpeg" alt="Les amoureux de Maguelone">
-        <h2>Les amoureux de Maguelone</h2>
-        <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
-    </div>  <div class="artwork" data-category="vie">
-<img src="les-amoureux-de-gangneung.jpeg" alt="Les amoureux de Gangneung">
-        <h2>Les amoureux de Gangneung</h2>
-        <p class="dimensions">Huile sur toile - 60 × 60 cm</p>
- 
-</div>  <div class="artwork" data-category="urbain">
-<img src="patience.jpeg" alt="Patience">
-        <h2>Patience</h2>
-        <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
-      </div>  <div class="artwork" data-category="urbain">
-<img src="un-jour-a-paris.jpeg" alt="Un jour à Paris">
-        <h2>Un jour à Paris</h2>
-        <p class="dimensions">Huile sur toile - 40 × 50 cm</p>
-    </div>  <div class="artwork" data-category="chevaux">
-<img src="midi-les-juments-au-pré.jpeg" alt="Midi : les juments au pré">
-        <h2>Midi : les juments au pré</h2>
-        <p class="dimensions">Huile sur toile - 40 × 50 cm</p>
-    </div>  <div class="artwork" data-category="paysage">
-<img src="Balade-au-bord-du-lac.jpeg" alt="Balade au bord du lac">
-        <h2>Balade au bord du lac</h2>
-        <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
-    </div>  <div class="artwork" data-category="paysage">
-<img src="Balade-nocturne.jpeg" alt="Balade nocturne">
-        <h2>Balade nocturne</h2>
-        <p class="dimensions">Huile sur toile - 73 × 100 cm</p>
-    </div>  <div class="artwork" data-category="paysage">
-<img src="invitation-au-repos.jpeg" alt="Invitation au repos">
-        <h2>Invitation au repos</h2>
-        <p class="dimensions">Huile sur toile - 45 × 53 cm</p>
-   </div>  <div class="artwork" data-category="urbain">
-<img src="calme-dans-la-ville.jpeg" alt="Calme dans la ville">
-        <h2>Calme dans la ville</h2>
-        <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
-   </div>  <div class="artwork" data-category="paysage">
-<img src="Les-montagnes-caressent-le-ciel.jpeg" alt="Les montagnes caressent le ciel">
-        <h2>Les montagnes caressent le ciel</h2>
-        <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
-    </div>  <div class="artwork" data-category="paysage">
-<img src="la-mer.jpeg" alt="La mer">
-        <h2>La mer</h2>
-        <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
-    </div>  <div class="artwork" data-category="paysage">
-<img src="le-repos-des-vignes.jpeg" alt="Le repos des vignes">
-        <h2>Le repos des vignes</h2>
-        <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
-    </div>  <div class="artwork" data-category="paysage">
-<img src="le-calme-aux-étangs.jpeg" alt="Le calme aux étangs">
-        <h2>Le calme aux étangs</h2>
-        <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
-    </div>  <div class="artwork" data-category="vie">
-<img src="partage.jpeg" alt="Partage">
-        <h2>Partage</h2>
-        <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
-    </div>  <div class="artwork" data-category="paysage">
-<img src="douce-lumiere-sur-le-village.jpeg" alt="Douce lumière sur le village">
-        <h2>Douce lumière sur le village</h2>
-        <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
-    </div> 
-<div class="artwork" data-category="paysage">
-<img src="ouverture.jpeg" alt="Ouverture">
-        <h2>Ouverture</h2>
-        <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
-    </div> 
-<div class="artwork" data-category="vie">
-    <div class="sold">INDISPONIBLE</div>
-    <img src="havre-de-paix.jpeg" alt="Havre de paix">
-    <h2>Havre de paix</h2>
-    <p class="dimensions">Huile sur toile - 30 × 40 cm</p>
-</div> 
-  <div class="artwork" data-category="paysage">
-    <div class="sold">INDISPONIBLE</div>
-    <img src="les-nouvelles-couleurs-de-l-été.jpeg" alt="Les nouvelles couleurs de l'été">
-    <h2>Les nouvelles couleurs de l'été</h2>
-    <p class="dimensions">Huile sur toile - 40 × 40 cm</p>
-</div> 
- <div class="artwork" data-category="paysage">
-<img src="la-prairie-au-souffle-des-nuages.jpeg" alt="La prairie au souffle des nuages">
-        <h2>La prairie au souffle des nuages</h2>
-        <p class="dimensions">Huile sur toile - 40 × 50 cm</p>
-    </div> 
-<div class="artwork" data-category="vie">
-<img src="Douceur-sur-les-hauteurs.jpeg" alt="Douceur sur les hauteurs">
-        <h2>Douceur sur les hauteurs</h2>
-        <p class="dimensions">Huile sur toile - 89 × 116 cm</p>
-    </div> 
-<div class="artwork" data-category="voyage">
-<img src="le-chemin.jpeg" alt="Le chemin">
-        <h2>Le chemin</h2>
-        <p class="dimensions">Huile sur toile - 89 × 116 cm</p>
-    </div> 
-<div class="artwork" data-category="paysage">
-<img src="fin-de-journée.jpeg" alt="Fin de journée">
-        <h2>Fin de journée</h2>
-        <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
-    </div>  <div class="artwork"></div></div>
-
-<footer>
-© Cassandre Vendeoux
-</footer><div class="lightbox" id="lightbox">
-    <img id="lightbox-img" src="" alt="">
-</div>
-
-<script>
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-
-document.querySelectorAll(".artwork img").forEach(img => {
-    img.addEventListener("click", () => {
-        lightbox.style.display = "flex";
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-    });
-});
-
-lightbox.addEventListener("click", () => {
-    lightbox.style.display = "none";
-});
-
-document.addEventListener("keydown", e => {
-    if (e.key === "Escape") {
-        lightbox.style.display = "none";
-    }
-});const buttons = document.querySelectorAll(".filters button");
-const artworks = document.querySelectorAll(".artwork");
-
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        buttons.forEach(b => b.classList.remove("active"));
-        button.classList.add("active");
-
-        const filter = button.dataset.filter;
-
-        artworks.forEach(artwork => {
-            if (filter === "all" || artwork.dataset.category === filter) {
-                artwork.style.display = "block";
-            } else {
-                artwork.style.display = "none";
-            }
         });
-    });
-}); const allArtworks = document.querySelectorAll(".artwork");
-const filterButtons = document.querySelectorAll(".filters button");
 
-filterButtons.forEach(button => {
 
-    const category = button.dataset.filter;
+        lightbox.addEventListener("click", () => {
 
-    let count;
+            lightbox.style.display = "none";
 
-    if (category === "all") {
-        count = allArtworks.length;
-    } else {
-        count = document.querySelectorAll(
-            `.artwork[data-category="${category}"]`
-        ).length;
-    }
+        });
 
-    button.textContent += ` (${count})`;
 
-});
-</script>
+        document.addEventListener("keydown", e => {
+
+            if (e.key === "Escape") {
+
+                lightbox.style.display = "none";
+
+            }
+
+        });
+
+
+        /* =========================
+           FILTRES
+        ========================= */
+
+        const buttons = document.querySelectorAll(".filters button");
+        const artworks = document.querySelectorAll(".artwork");
+
+        buttons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                buttons.forEach(b => {
+                    b.classList.remove("active");
+                });
+
+                button.classList.add("active");
+
+                const filter = button.dataset.filter;
+
+                artworks.forEach(artwork => {
+
+                    if (
+                        filter === "all" ||
+                        artwork.dataset.category === filter
+                    ) {
+
+                        artwork.style.display = "block";
+
+                    } else {
+
+                        artwork.style.display = "none";
+
+                    }
+
+                });
+
+            });
+
+        });
+
+
+        /* =========================
+           COMPTEURS
+        ========================= */
+
+        const allArtworks = document.querySelectorAll(".artwork");
+        const filterButtons = document.querySelectorAll(".filters button");
+
+        filterButtons.forEach(button => {
+
+            const category = button.dataset.filter;
+
+            let count;
+
+            if (category === "all") {
+
+                count = allArtworks.length;
+
+            } else {
+
+                count = document.querySelectorAll(
+                    `.artwork[data-category="${category}"]`
+                ).length;
+
+            }
+
+            button.textContent += ` (${count})`;
+
+        });
+
+    </script>
 
 </body>
+
 </html>
