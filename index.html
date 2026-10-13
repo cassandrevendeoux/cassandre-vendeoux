@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cassandre Vendeoux — Peintures</title>
+    <title>Cassandre Vendéoux — Peintures</title>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap"
@@ -482,8 +482,8 @@
             <div class="featured-image">
 
                 <img
-                    src="Balade-nocturne.jpeg"
-                    alt="Balade nocturne — paysage de Florence"
+                    src="une-marche-en-ville.jpeg"
+                    alt="Une marche en ville — les rues de Montpellier"
                 >
 
             </div>
@@ -496,29 +496,20 @@
                 </p>
 
                 <h2>
-                    Balade nocturne
-                </h2>
+                    Une marche en ville                </h2>
 
                 <p class="location">
-                    Florence, au crépuscule
+                   Montpellier
                 </p>
 
                 <p class="description">
-                    <em>Balade nocturne</em> nous emmène à Florence lorsque la ville s'abandonne
-                    doucement à la nuit.
-                </p>
+                    <em></em> Une promenade au cœur de Montpellier révèle toute la richesse de la vie urbaine. Dans le dédale d’une rue ancienne, deux sportifs avancent, incarnant le mouvement et la vitalité d’une ville où passé et présent se rencontrent. Entre les pierres chargées d’histoire et le rythme de la vie moderne, cette scène du quotidien témoigne de l’évolution des modes de vie et du passage du temps. Un instant suspendu, où les traces d’hier se mêlent aux pas d’aujourd’hui.  </p>
 
-                <p class="description">
-                    Les lumières de la ville se reflètent sur les façades
-                    et les rues prennent une atmosphère presque silencieuse.
-                    Une invitation à ralentir, à regarder et à retrouver,
-                    dans la lumière de Florence, la sensation d'un instant
-                    suspendu entre jour et nuit.
-                </p>
+                <p class="description">           </p>
 
                 <p class="featured-details">
                     Huile sur toile<br>
-                    73 × 100 cm
+                    60 × 81 cm
                 </p>
 
                 <a href="#galerie" class="discover">
@@ -673,14 +664,21 @@
             </div>
 
 
-            <div class="artwork" data-category="urbain">
+        <div class="artwork" data-category="urbain">
                 <img src="a-montpellier.jpeg" alt="Calme et Cathédrale">
                 <h2>Calme et Cathédrale</h2>
                 <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
             </div>
 
 
-            <div class="artwork" data-category="paysage">
+              <div class="artwork" data-category="urbain">
+                <img src="une-marche-en-ville.jpeg" alt="Une marche en ville">
+                <h2>Une marche en ville</h2>
+                <p class="dimensions">Huile sur toile - 60 × 81 cm</p>
+            </div>
+
+
+               <div class="artwork" data-category="paysage">
                 <img src="un-cafe-un-lac-un-instant.jpeg" alt="Moment près du lac">
                 <h2>Moment près du lac</h2>
                 <p class="dimensions">Huile sur toile - 50 × 70 cm</p>
@@ -1095,6 +1093,162 @@
 
     </script>
 
-</body>
+</body> 
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <span class="contact-label">CONTACT</span>
+    <h2>Une question ?</h2>
+    <p class="contact-description">
+      Une demande ou besoin d'un renseignement ?
+   Écrivez-nous, nous serons ravis de vous répondre.
+    </p>
+
+    <form action="https://formsubmit.co/cassvdxart@gmail.com"
+          method="POST">
+
+      <input type="hidden" name="_subject"
+             value="Nouvelle question depuis mon site">
+
+      <input type="hidden" name="_captcha" value="true">
+
+      <div class="form-group">
+        <label for="name">Votre nom</label>
+        <input type="text" id="name" name="name"
+               placeholder="Votre nom" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Votre adresse e-mail</label>
+        <input type="email" id="email" name="email"
+               placeholder="vous@exemple.fr" required>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Sujet</label>
+        <input type="text" id="subject" name="subject"
+               placeholder="Le sujet de votre question" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Votre message</label>
+        <textarea id="message" name="message" rows="5"
+                  placeholder="Écrivez votre message ici..."
+                  required></textarea>
+      </div>
+
+      <button type="submit" class="contact-button">
+        Envoyer mon message →
+      </button>
+    </form>
+
+    <p class="contact-note">
+      Merci pour votre message. Nous vous répondrons dès que possible.
+    </p>
+  </div>
+</section>
+
+<style>
+.contact-section {
+  padding: 70px 20px;
+  background: #f5f7fb;
+  font-family: Arial, sans-serif;
+}
+
+.contact-container {
+  max-width: 620px;
+  margin: auto;
+  padding: 40px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px #172b4d12;
+}
+
+.contact-label {
+  color: #2459a9;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.contact-container h2 {
+  color: #172b4d;
+  font-size: 32px;
+  margin: 15px 0;
+}
+
+.contact-description {
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  color: #26364d;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  border: 1px solid #dce2eb;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 15px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: 2px solid #2459a9;
+  outline-offset: 1px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.contact-button {
+  width: 100%;
+  padding: 16px;
+  background: #2459a9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-button:hover {
+  background: #173e7a;
+}
+
+.contact-note {
+  margin-top: 20px;
+  color: #64748b;
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 25px 18px;
+  }
+
+  .contact-container h2 {
+    font-size: 26px;
+  }
+}
+</style>
+ 
 
 </html>
